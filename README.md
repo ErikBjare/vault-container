@@ -1,7 +1,22 @@
-How to dmcrypt volumes
-======================
+vault-container
+===============
 
-# Creating
+Some files are just too sensitive to have laying around, even if you have full disk encryption. 
+
+Also, sometimes you just want to upload something very important to an untrusted service (for backup purposes), and an encrypted container works wonders.
+
+
+# Why?
+
+I got tired of using Truecrypt/Veracrypt, and needed something simple that will stand the test of time.
+
+# Usage
+
+Follow the guide below to create a volume, you may then use the convenience scripts `mount.sh` and `unmount.sh` instead of following the mounting and unmounting steps manually (which might be prone to errors).
+
+# How to create dmcrypt volumes
+
+## Creating
 
 Guide based on: https://www.digitalocean.com/community/tutorials/how-to-use-dm-crypt-to-create-an-encrypted-volume-on-an-ubuntu-vps
 
@@ -36,7 +51,7 @@ Now we need to format the filesystem. Ext4 should be fine.
 ```
 
 
-# Mounting
+## Mounting
 
 **ONLY NEEDED ONCE PER MACHINE** 
 Create a mount point.
@@ -58,7 +73,7 @@ Mount the filesystem.
 You should now be able to read and write to the volume! (Try `df -h` to see the device)
 
 
-# Unmounting
+## Unmounting
 
 First unmount the filesystem.
 ```sh
